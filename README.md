@@ -22,7 +22,7 @@ have to have the well-prepared data ready for training.
 
 ######################################################## 
 
-Training data for proposal network (train_proposal.py):
+# Training data for proposal network (train_proposal.py):
 
 training_data: a list of  data
 
@@ -36,7 +36,7 @@ training_data[3] = anchor_label_mask
 
 training_data[4] = anchor_reg_mask
 
-validation_data has same structure of training_data
+validation_data has same structure as training_data.
 
 The format of prepared data should be:
 
@@ -51,7 +51,7 @@ anchor_reg: Anchor regression value corresponding to birdview. Format: .npy file
 
 anchor_reg_mask: Mask for valid anchors of regression. Format: .npy file. [number of images, row of a image, col of a image, number of anchors]. The values in anchor_reg_mask are either be one or zero. Being one means the corresponding anchors of rehression are counted in training otherwise are not
 
-Training data for fusion network (train_fusion.py):
+# Training data for fusion network (train_fusion.py):
 
 training_data: a list containing training data
 
@@ -81,7 +81,7 @@ training_data[11] = data_cls_mask
 
 training_data[12] = data_reg_mask
 
-validation_data has same structure of training_data
+Validation_data has same structure as training_data.
 
 The format of prepared data should be:
 
