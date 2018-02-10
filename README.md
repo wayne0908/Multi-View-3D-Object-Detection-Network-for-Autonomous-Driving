@@ -15,8 +15,6 @@ There are sets of data in the TEST_DATA. Note that these
 data is only to provide you the clue of data's format. You
 have to have the well-prepared data ready for training.
 
-######################################################## 
-
 # Training data for proposal network (train_proposal.py):
 
 training_data: a list of  data
