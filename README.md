@@ -1,5 +1,5 @@
 # General description 
-Reproduce a network described by the [1].
+Reproduce the MV3D network described by the [1].
 
 According to [1], training are divided into two stages:
 
