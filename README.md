@@ -1,7 +1,5 @@
-# Multi-View-3D-Object-Detection-Network-for-Autonomous-Driving
-Reproduce a network described by the [1] 
-
-############# General description ####################
+# General description 
+Reproduce a network described by the [1].
 
 According to [1], training are divided into two stages:
 
@@ -12,9 +10,6 @@ run prediction_proposal.py to generate proposal candidates.
 2. Run train_fusion.py to train the fusion network.
 The network is to generate final results. Aftering training,
 run prediction_fusion.py to generate final results.
-
-
-############# Data description ########################
 
 There are sets of data in the TEST_DATA. Note that these
 data is only to provide you the clue of data's format. You
@@ -106,6 +101,6 @@ data_rgbview_box_ind: The value of data_birdview_box_ind[i] specifies the rgbvie
 data_ROI_labels: Region labels. Format: .npy file. [number of images, 200 regions]. The values in data_ROI_labels are either be one or zero. Being ones means the region are postive otherwise are negative or 
 invalid.
 
-#################### Reference ####################
+# Reference
 
 [1] Chen, Xiaozhi, et al. "Multi-view 3d object detection network for autonomous driving." IEEE CVPR. Vol. 1. No. 2. 2017.
