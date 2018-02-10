@@ -2,6 +2,7 @@
 Reproduce a network described by the [1] 
 
 ############# General description ####################
+
 According to [1], training are divided into two stages:
 
 1. Run train_proposal.py to train the proposal network.
