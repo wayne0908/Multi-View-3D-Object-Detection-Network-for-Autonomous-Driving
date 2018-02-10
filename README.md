@@ -15,9 +15,11 @@ run prediction_fusion.py to generate final results.
 
 
 ############# Data description ########################
+
 There are sets of data in the TEST_DATA. Note that these
 data is only to provide you the clue of data's format. You
 have to have the well-prepared data ready for training.
+
 ######################################################## 
 
 Training data for proposal network (train_proposal.py):
@@ -91,4 +93,5 @@ The values in data_ROI_labels are either be one or zero. Being ones means the re
 invalid.
 
 #################### Reference ####################
+
 [1] Chen, Xiaozhi, et al. "Multi-view 3d object detection network for autonomous driving." IEEE CVPR. Vol. 1. No. 2. 2017.
