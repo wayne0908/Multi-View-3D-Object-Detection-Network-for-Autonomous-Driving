@@ -1,0 +1,65 @@
+Data for proposal network:
+
+# birdview: Birdview generated from LIDAR point cloud. Format: .npy file. 
+# shape: [number of images, row of a image, col of a image, channels]
+
+# anchor_label: Anchor labels corresponding to birdview. Format: .npy file. 
+# shape: [number of images, row of a image, col of a image, number of anchors]
+# The values in anchor_label are either be one or zero. Being ones means the anchor are postive and # otherwise are negative or invalid. Please refer to [1] and [2] for the explanation of anchors.
+
+# anchor_label_mask: Mask for valid anchors of label. Format: .npy file. 
+# Shape: [number of images, row of a image, col of a image, number of anchors]. The values in 
+# anchor_label_mask are either be one or zero. Being one means the corresponding anchors of label 
+# are valid otherwise are not. Invalid anchors are those neither be positive nor negative 
+# instance, due to the sparse of birdview map. Please refer [2] for detail.
+
+# anchor_reg: Anchor regression value corresponding to birdview. Format: .npy file. Shape: [number #of images, row of a image, col of a image, number of anchors, number of regression values]. The #values in last dimension store the regression values of anchor. If the anchor is invalid or #negative, just set them to be zero.
+
+# anchor_reg_mask: Mask for valid anchors of regression. Format: .npy file. Shape: [number of #images, row of a image, col of a image, number of anchors]. The values in anchor_label_mask are #either be one or zero. Being one means the corresponding anchors of label are postive anchors  #otherwise are negative anchors. 
+
+Data for network network:
+
+# data_birdview: Birdview generated from LIDAR point cloud. Format: .npy file. 
+# shape: [number of images, row of a image, col of a image, channels]
+
+# data_frontview: Frontview generated from LIDAR point cloud. Format: .npy file. 
+# shape: [number of images, row of a image, col of a image, channels]
+
+# data_rgbview: Rgbview generated from rgb image. Format: .npy file. 
+# shape: [number of images, row of a image, col of a image, channels]
+
+# data_birdview_rois: Region coordinate for birdview region pooling. Format: .npy file.
+# shape: [number of images * 200 regions, (y1, x1, y2, x2)]. (y1, x1) is coordinate of left up 
+# corner, and (y2, x2) is coordinate of right bottom corner. For example, for the two images and 
+# each of them respectively have one region with coordinates of (y1_1, x1_1, y2_1, x2_1) and (y1_2,
+# x1_2, y2_2, x2_2) required to be cropped, the shape of data_birdview_rois should be [2 x 200, 4]. # That being said, each image can have 200 regions of interest at most. The first n region of the 
+# 200 regions store coordinates (set zero for negative region) and others are invalid region whose 
+# coordinates should be set to be zero.    
+
+# data_frontview_rois: same as data_birdview_rois
+
+# data_rgbview_rois: same as data_rgbview_rois
+
+# data_birdview_box_ind: Format: .npy file. Shape: [number of images * 200 regions]. The value of data_birdview_box_ind[i] specifies which birdview map that the i-th region of interest (roi) are cropped from. Please refer to https://www.tensorflow.org/api_docs/python/tf/image/crop_and_resize to see the details.
+
+# data_frontview_box_ind: same as data_birdview_box_ind
+
+# data_rgbview_box_ind: same as data_birdview_box_ind
+
+# data_ROI_labels: Region labels. Format: .npy file. shape: [number of images, 200 regions]
+# The values in data_ROI_labels are either be one or zero. Being ones means the region are postive
+# otherwise are negative or invalid.
+
+# data_ROI_regs: Region regression values. Format: .npy file. shape: [number of images, 200 regions, # 24]. The values in the last dimension store the regression values of region. If the regoin is 
+# invalid or negative, just set them to be zero.
+
+# data_cls_mask: Mask for valid regions of label. Format: .npy file. shape:[number of images * 200 regions]. Being one means the corresponding regions of label are valid otherwise are not.
+
+# data_reg_mask: Mask for valid regions of regression. Format: .npy file. shape:[number of images * 200 regions]. Being one means the corresponding regions of regression are postive otherwise are not.
+
+
+
+Reference
+[1] Ren, Shaoqing, et al. "Faster r-cnn: Towards real-time object detection with region proposal networks." Advances in neural information processing systems. 2015.
+
+[2] Chen, Xiaozhi, et al. "Multi-view 3d object detection network for autonomous driving." IEEE CVPR. Vol. 1. No. 2. 2017.
